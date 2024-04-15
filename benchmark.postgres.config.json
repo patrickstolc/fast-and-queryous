@@ -1,0 +1,22 @@
+{
+  "Name": "User Comment Query",
+  "DatabaseType": "Postgres",
+  "Queries": [
+    {
+      "Name": "Find Post by Id",
+      "Query": "queries/find_post_by_id.postgres.sql"
+    },
+    {
+      "Name": "Post Summary",
+      "Query": "queries/post_summary.postgres.sql"
+    },
+    {
+      "Name": "Post Comments with Reactions",
+      "Query": "queries/post_comments_with_reactions.postgres.sql"
+    },
+    {
+      "Name": "Recent Posts with Most Reactions",
+      "Query": "queries/recent_posts_with_most_reactions.postgres.sql"
+    }
+  ]
+}

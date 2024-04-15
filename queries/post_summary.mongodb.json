@@ -1,0 +1,27 @@
+{
+  "aggregate": "posts",
+  "pipeline": [
+    {
+      "$project": {
+        "title": 1,
+        "content": 1,
+        "numberOfComments": { "$size": "$comments" },
+        "numberOfReactions": {
+          "$sum": {
+            "$map": {
+              "input": "$comments",
+              "as": "comment",
+              "in": {
+                "$add": [
+                  "$$comment.reactions.likes",
+                  "$$comment.reactions.dislikes"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "cursor": {}
+}

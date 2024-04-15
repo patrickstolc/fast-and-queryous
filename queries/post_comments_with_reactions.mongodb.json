@@ -1,0 +1,10 @@
+{
+  "aggregate": "posts",
+  "pipeline": [
+    { "$match": { "_id": "6616840f5a60fa6e12f9528e" } },
+    { "$project": { "comments": 1, "content": 1, "title": 1 } },
+    { "$unwind": "$comments" },
+    { "$group": { "_id": "$_id", "comments": { "$push": "$comments" } } }
+  ],
+  "cursor": {}
+}

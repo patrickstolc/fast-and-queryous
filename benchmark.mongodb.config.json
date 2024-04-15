@@ -1,0 +1,22 @@
+{
+  "Name": "User Comment Query",
+  "DatabaseType": "mongodb",
+  "Queries": [
+    {
+      "Name": "Find Post by Id",
+      "Query": "queries/find_post_by_id.mongodb.json"
+    },
+    {
+      "Name": "Post Summary",
+      "Query": "queries/post_summary.mongodb.json"
+    },
+    {
+      "Name": "Post Comments with Reactions",
+      "Query": "queries/post_comments_with_reactions.mongodb.json"
+    },
+    {
+      "Name": "Recent Posts with most Reactions",
+      "Query": "queries/recent_posts_with_most_reactions.mongodb.json"
+    }
+  ]
+}

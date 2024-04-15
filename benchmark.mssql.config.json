@@ -1,0 +1,22 @@
+{
+  "Name": "User Comment Query",
+  "DatabaseType": "MSSQL",
+  "Queries": [
+    {
+      "Name": "Find Post by Id",
+      "Query": "queries/find_post_by_id.mssql.sql"
+    },
+    {
+      "Name": "Post Summary",
+      "Query": "queries/post_summary.mssql.sql"
+    },
+    {
+      "Name": "Post Comments with Reactions",
+      "Query": "queries/post_comments_with_reactions.mssql.sql"
+    },
+    {
+      "Name": "Recent Posts with most Reactions",
+      "Query": "queries/recent_posts_with_most_reactions.mssql.sql"
+    }
+  ]
+}

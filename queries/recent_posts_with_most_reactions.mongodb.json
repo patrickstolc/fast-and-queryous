@@ -1,0 +1,28 @@
+{
+  "aggregate": "posts",
+  "pipeline": [
+    {
+      "$project": {
+        "title": 1,
+        "publicationDate": 1,
+        "numberOfReactions": {
+          "$sum": {
+            "$map": {
+              "input": "$comments",
+              "as": "comment",
+              "in": {
+                "$add": [
+                  "$$comment.reactions.likes",
+                  "$$comment.reactions.dislikes"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    { "$sort": { "numberOfReactions": -1, "publicationDate": -1 } },
+    { "$limit": 10 }
+  ],
+  "cursor": {}
+}
